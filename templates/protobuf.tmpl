@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package = "{{ Package }}";
+
+option go_package = "{{ Package }}";
+
+// Label is a label key-value pair.
+message Label {
+  string name = 1;
+  string value = 2;
+}
+
+// Arg is an erratum argument.
+message Arg {
+  string parameter = 1;
+  string value = 2;
+}
+
+// Erratum is a detailed error message.
+message Erratum {
+  string message = 1;
+  repeated string categories = 2;
+  string guide = 3;
+  repeated arg args = 4;
+  repeated label labels = 5;
+}
